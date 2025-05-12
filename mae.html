@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dia das Mães</title>
+  <link rel="stylesheet" href="style.css" /> 
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+    <h1>Feliz Dia das Mães!</h1>
+
+    <h2>Momentos com a Mamãe</h2>
+    <div class="gallery">
+        <img src="imagens/fotodamae1.jpeg" alt="Foto 1" />
+        <img src="imagens/fotodamae2.jpeg" alt="Foto 2" />
+      
+        <p class="photo-caption">"Com você cada momento é mais divertido e inesquecível."</p>
+      
+        <img src="imagens/fotodamae3.jpeg" alt="Foto 3" />
+        <img src="imagens/fotodamae4.jpeg" alt="Foto 4" />
+      
+        <p class="photo-caption">"Com você aprendi que o amor verdadeiro é simples, puro e incondicional."</p>
+      
+        <img src="imagens/fotodamae5.jpeg" alt="Foto 5" />
+        <img src="imagens/fotodamae6.jpeg" alt="Foto 6" />
+      
+        <p class="photo-caption">"Mãe, você é o primeiro lar do meu coração e o amor que me guia todos os dias."</p>
+      
+        <img src="imagens/fotodamae7.jpeg" alt="Foto 7" />
+      
+        <p class="photo-caption">"Ter você como mãe é a prova de que Deus me ama imensamente."</p>
+      </div>
+      <strong></strong>
+    
+    <p class="motivational-text">
+      Mãe, você é a razão do meu sorriso, a força nas minhas quedas e o amor que nunca falha. <br />
+      Hoje celebramos você, mas todos os dias te amamos. Obrigado por ser minha inspiração constante. ❤️
+    </p>
+    <p class="motivational-text">
+        Mãe, não existem palavras que realmente consigam expressar toda a gratidão que sentimos por você. 
+        <strong>Obrigado por estar sempre presente, por cada gesto de cuidado, por cada preocupação que mostra o quanto você nos ama.</strong><br><br>
+      
+        <strong>Você é o coração da nossa família</strong>, aquela que, com amor e esforço, nunca deixa faltar nada. 
+        Sempre se preocupa com cada um de nós, mesmo quando esquece de cuidar de si. 
+        Está sempre pronta para nos satisfazer, realizar nossas vontades e nos fazer sorrir, mesmo nos momentos difíceis.<br><br>
+      
+        <strong>Você tem o dom de transformar qualquer dia comum em um momento especial.</strong> 
+        Seu riso, seu abraço e sua força tornam nossa casa mais leve e mais feliz.<br><br>
+      
+        <strong>Desejamos que você sinta, todos os dias, o quanto é amada.</strong> 
+        Que receba em dobro todo o amor que oferece. 
+        <strong>Que a família inteira nunca deixe de demonstrar o quanto você é essencial em nossas vidas.</strong><br><br>
+      
+        <strong>Te amamos profundamente, mãe.</strong> Obrigado por ser nosso porto seguro, nossa alegria e nossa inspiração.
+      </p>
+      
+    <div class="customization">
+      <label for="name">Nome da Mãe:</label>
+      <input type="text" id="name" placeholder="Digite o nome..." />
+
+      <label for="color">Cor de fundo:</label>
+      <input type="color" id="color" value="#ffd1dc" />
+
+      <button onclick="customize()">Personalizar</button>
+    </div>
+  </div>
+
+  <script>
+    function customize() {
+      const name = document.getElementById('name').value.trim();
+      const color = document.getElementById('color').value;
+
+      if (name) {
+        document.querySelector('.motivational-text').innerHTML =
+          `Mãe, ${name}, você é a razão do meu sorriso, a força nas minhas quedas e o amor que nunca falha. <br />
+          Hoje celebramos você, mas todos os dias te amamos. Obrigado por ser minha inspiração constante. ❤️`;
+      }
+
+      document.querySelector('.overlay').style.backgroundColor = color + '88';
+    }
+
+    const colors = ['#FFC0CB', '#FF69B4', '#FFB6C1', '#DB7093'];
+    for (let i = 0; i < 30; i++) {
+      let petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+      petal.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
